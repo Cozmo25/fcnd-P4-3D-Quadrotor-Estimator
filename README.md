@@ -205,7 +205,7 @@ Running scenario 08_PredictState the estimated state tracks the actual state, wi
 
 The implementation of `GetRbgPrime()` for step 4 can be found in `QuadEstimatorEKF.cpp` on lines `209 - 223` according to the following formula:
 
-[Rbg Prime](./images/rbg_prime.png)
+![Rbg Prime](./images/rbg_prime.png)
 
 The function returns the 3x3 matrix representing the partial derivative at the given point.
 
@@ -213,11 +213,11 @@ Finally, I completed the `Predict()` function using the supplied Jacobian `gPrim
 
 The transition function `g` is defined as:
 
-[g](./images/g.png)
+![g](./images/g.png)
 
 And its Jacobian `gPrime` is:
 
-[g prime](./images/g_prime.png)
+![g prime](./images/g_prime.png)
 
 Taking these inputs we can determine the covariance matrix according to the extended Kalman filter (EKF) equation:
 
@@ -256,7 +256,7 @@ The implementation of `UpdateFromMag()` can be found in `QuadEstimatorEKF.cpp` o
 
 First we create the array `hPrime` according to:
 
-[hPrime](./images/h_prime.png)
+![hPrime](./images/h_prime.png)
 
 Then, we assign the current yaw to the vector `zFromX` and normalise it to between -pi and pi.
 
